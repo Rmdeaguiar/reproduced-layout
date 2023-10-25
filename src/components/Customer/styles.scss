@@ -33,11 +33,13 @@
 
   .options-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    padding-bottom: 60px;
+    padding: 0px 60px 60px 60px;
     border-bottom: 1px solid white;
+
 
     .about-customer {
       display: flex;
