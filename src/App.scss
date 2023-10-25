@@ -7,29 +7,6 @@
   max-width: 100vw;
 }
 
-@keyframes appear {
-  0% {
-    transform: translateX(-100%);
-    color: rgb(51, 51, 51);
-  }
-
-  100% {
-    transform: translateX(0);
-    background: linear-gradient(45deg, #7223cf, #da2eb8);
-    color: white;
-  }
-}
-
-@keyframes balance {
-  0% {
-    transform: rotate(15deg);
-  }
-
-  100% {
-    transform: rotate(30deg);
-  }
-}
-
 main {
   min-height: 100vh;
   width: 100%;
