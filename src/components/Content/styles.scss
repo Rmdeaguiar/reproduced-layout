@@ -8,6 +8,24 @@
   }
 }
 
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {opacity: 0;}
+  to{opacity: 1;}
+}
+
+
+
 .content-container {
   display: flex;
   justify-content: center;
@@ -23,29 +41,39 @@
     justify-content: center;
     flex-direction: column;
     width: 70%;
+    // animation: slide-up 600ms linear 300ms forwards;
+    color: white;
+    overflow: hidden;
+    animation-name: slide-up;
+    animation-duration: 2s;
 
-    :first-child{
+    :first-child {
       align-self: flex-start;
     }
+
     :last-child {
       align-self: flex-end;
     }
 
     h2 {
-      color: white;
       font-size: 90px;
       font-weight: 800;
       line-height: 115%;
     }
+
+
   }
 
   .bubble {
     background-color: rgba(255, 255, 255, .1);
     border-radius: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
+    display: flex;
+    animation-name: appear;
+    animation-duration: 3s;
+
 
     &.target {
       width: 137px;

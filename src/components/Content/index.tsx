@@ -4,7 +4,7 @@ function Content() {
 
   return (
     <div className="content-container">
-    <div className="title-container">
+    <div className="title-container slide-up">
       <h2>Let's grow your</h2>
       <h2>social presence.</h2>
     </div>
