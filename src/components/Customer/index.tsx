@@ -13,8 +13,17 @@ function Customer() {
     { title: 'Products', emoji: '📦' }, { title: 'Services', emoji: '🤝' }, { title: 'SaaS', emoji: '🖥️' }, { title: 'Personality', emoji: '🤳' }, { title: 'Other', emoji: '🤔' }
   ]
   const budgetClient: string[] = ['$1-2k/mo', '$3k-4k/mo', '$5k-7k/mo', '$8k+/mo', 'These are out of my budget'];
-  const startClient: string[] = ['Yesterday', 'Within 2 weeks', 'Within a few months', 'Not for a while'];
+  //const startClient: string[] = ['Yesterday', 'Within 2 weeks', 'Within a few months', 'Not for a while'];
 
+
+function handleBtnNext () {
+  setPage(2)
+}
+
+
+function handleBtnPrev () {
+  setPage(1)
+}
 
   return (
     <div className="customer-container">
@@ -38,7 +47,8 @@ function Customer() {
         ))}
       </div>
       <div className='footer-customer'>
-        <button onClick={() => setPage(2)}>Next</button>
+        <button className={`btn-previous ${page === 1 ? "" : "btn-opacity" }`} onClick={() => handleBtnPrev()}>Previous</button>
+        <button className='btn-next' onClick={() => handleBtnNext()}>Next</button>
       </div>
     </div>
   );
