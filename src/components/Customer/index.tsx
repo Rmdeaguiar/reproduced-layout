@@ -36,15 +36,30 @@ function handleBtnPrev () {
       </div>
       <div className="options-container">
         {page === 1 ? aboutClient.map((about) => (
-          <div key={about.title} className='about-customer'>
+          <div key={about.title} className={'about-customer appear-up'}>
             <p>{about.title}</p>
             <p>{about.emoji}</p>
           </div>
-        )) : budgetClient.map((budget)=>(
-          <div key={budget} className='about-customer'> 
-          <p>{budget}</p>
+        )) : 
+        aboutClient.map((about) => (
+          <div key={about.title} className={'about-customer disappear-down'}>
+            <p>{about.title}</p>
+            <p>{about.emoji}</p>
           </div>
         ))}
+
+        {page === 2 ? 
+           budgetClient.map((budget)=>(
+            <div key={budget} className={'about-customer appear-up'}> 
+            <p>{budget}</p>
+            </div>
+          )) : 
+          budgetClient.map((budget)=>(
+            <div key={budget} className={'about-customer disappear-down'}> 
+            <p>{budget}</p>
+            </div>
+          ))
+          }
       </div>
       <div className='footer-customer'>
         <button className={`btn-previous ${page === 1 ? "" : "btn-opacity" }`} onClick={() => handleBtnPrev()}>Previous</button>

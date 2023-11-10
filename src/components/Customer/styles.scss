@@ -5,12 +5,14 @@
 
 @keyframes slide-down {
   0% {
-    opacity: 0;
-    transform: translateY(-80px);
+    display: flex;
+    opacity: 1;
+    transform: translateY(0px);
   }
   100% {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateY(80px);
+    opacity: 0;
+    display: none;
   }
 }
 
@@ -82,6 +84,18 @@
       font-weight: 600;
       font-size: 20px;
       cursor: pointer;
+    }
+
+    .appear-up {
+      animation-name: slide-up;
+      animation-duration: 1s;
+    }
+    
+    .disappear-down {
+      animation-name: slide-down;
+      animation-duration: 1s;
+      display: none;
+      position: absolute;
     }
   }
 
