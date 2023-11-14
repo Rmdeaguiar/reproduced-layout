@@ -3,6 +3,22 @@ import { useState } from 'react';
 
 function Customer() {
   const [page, setPage] = useState(1);
+  const [subtitleCostumer, setSubtitleCostumer] = useState("");
+
+  const pageContent = (page: number) => {
+    switch (page) {
+      case 1:
+        return <h3>Hi!😉 What best explains you?</h3>;
+      case 2:
+        return <h3>Nice👍 What is your monthly budget?</h3>;
+      case 3:
+        return <h3>Anything else you want us to know?</h3>;
+      case 4:
+        return <h3>Great!🙌 What's your name?</h3>;
+      default:
+        return null; 
+    }
+  };
 
   type About = {
     title: string,
@@ -15,13 +31,11 @@ function Customer() {
   const budgetClient: string[] = ['$1-2k/mo', '$3k-4k/mo', '$5k-7k/mo', '$8k+/mo', 'These are out of my budget'];
   //const startClient: string[] = ['Yesterday', 'Within 2 weeks', 'Within a few months', 'Not for a while'];
 
-
   function handleBtnNext() {
     if (page < 4) {
       setPage(page + 1)
     }
   }
-
 
   function handleBtnPrev() {
     if (page !== 1) {
@@ -36,10 +50,7 @@ function Customer() {
         <h3>{page}/4</h3>
       </div>
       <div className="info-customer">
-        {page === 1 && <h3>Hi!😉 What best explains you?</h3>}
-        {page === 2 && <h3>Nice👍 What is your monthly budget?</h3>}
-        {page === 3 && <h3>Anything else you want us to know?</h3>}
-        {page === 4 && <h3>Great!🙌 What's your name?</h3>}
+      {pageContent(page)}
       </div>
       <div className="options-container">
         {page === 1 ? aboutClient.map((about) => (
