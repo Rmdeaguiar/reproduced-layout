@@ -89,8 +89,8 @@ function Customer() {
         }
       </div>
       <div className='footer-customer'>
-        <button className={`btn-previous ${page === 1 ? "" : "btn-opacity"}`} onClick={() => handleBtnPrev()}>Previous</button>
-        <button onClick={() => handleBtnNext()}>{page === 4 ? 'Submit' : 'Next'}</button>
+        <button data-testid="back" className={`btn-previous ${page === 1 ? "" : "btn-opacity"}`} onClick={() => handleBtnPrev()}>Previous</button>
+        <button data-testid="next" onClick={() => handleBtnNext()}>{page === 4 ? 'Submit' : 'Next'}</button>
       </div>
     </div>
   );
